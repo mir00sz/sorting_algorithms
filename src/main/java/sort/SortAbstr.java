@@ -1,6 +1,6 @@
 package sort;
 
-public abstract class SortAbstr {
+public abstract class SortAbstr implements SortingInterface{
 
 
     protected void swap(int[] arr, int firstIndex, int secondIndex){

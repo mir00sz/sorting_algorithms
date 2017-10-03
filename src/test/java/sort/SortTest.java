@@ -17,6 +17,8 @@ public class SortTest {
 
     private static final Logger LOGGER = Logger.getLogger(SortTest.class);
 
+    SortingInterface sortingInterface;
+
 
     @Before
     public void setUp() {
@@ -31,11 +33,11 @@ public class SortTest {
     public void selectionSortTest() {
 
         LOGGER.info("SELECTION SORT TEST");
-        SelectionSort selectionSort = new SelectionSort();
-        selectionSort.sort(arr1);
-        selectionSort.sort(arr2);
-        selectionSort.sort(arr3);
-        selectionSort.sort(arr4);
+        sortingInterface = new SelectionSort();
+        sortingInterface.sort(arr1);
+        sortingInterface.sort(arr2);
+        sortingInterface.sort(arr3);
+        sortingInterface.sort(arr4);
 
         printTables();
         assertTrue(areArraysSoretd());
@@ -46,11 +48,11 @@ public class SortTest {
     @Test
     public void insertionSort() {
         LOGGER.info("INSERT SORT TEST");
-        InsertionSort insertionSort = new InsertionSort();
-        insertionSort.insertionSort(arr1);
-        insertionSort.insertionSort(arr2);
-        insertionSort.insertionSort(arr3);
-        insertionSort.insertionSort(arr4);
+        sortingInterface = new InsertionSort();
+        sortingInterface.sort(arr1);
+        sortingInterface.sort(arr2);
+        sortingInterface.sort(arr3);
+        sortingInterface.sort(arr4);
 
         printTables();
         assertTrue(areArraysSoretd());
