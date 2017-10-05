@@ -34,13 +34,7 @@ public class SortTest {
 
         LOGGER.info("SELECTION SORT TEST");
         sortingInterface = new SelectionSort();
-        sortingInterface.sort(arr1);
-        sortingInterface.sort(arr2);
-        sortingInterface.sort(arr3);
-        sortingInterface.sort(arr4);
-
-        printTables();
-        assertTrue(areArraysSoretd());
+        sortPrintAndAssert();
 
 
     }
@@ -49,18 +43,34 @@ public class SortTest {
     public void insertionSort() {
         LOGGER.info("INSERT SORT TEST");
         sortingInterface = new InsertionSort();
-        sortingInterface.sort(arr1);
-        sortingInterface.sort(arr2);
-        sortingInterface.sort(arr3);
-        sortingInterface.sort(arr4);
+        sortPrintAndAssert();
 
-        printTables();
-        assertTrue(areArraysSoretd());
+    }
+
+    @Test
+    public void mergeSort(){
+        LOGGER.info("MERGE SORT TEST");
+        sortingInterface = new MergeSort();
+        sortPrintAndAssert();
+    }
+
+    @Test
+    public void tst(){
+        int[] ar = new int[]{1,2,3,4};
+        int k=1;
+        LOGGER.info(ar[k++]);
+        LOGGER.info(ar[k]);
 
     }
 
 
     /////////////////////////HELPERS///////////////////////
+    private void sortPrintAndAssert(){
+        testSort();
+        printTables();
+        assertTrue(areArraysSoretd());
+    }
+
     private void printTables() {
         LOGGER.info("Arr1: " + Arrays.toString(arr1));
         LOGGER.info("Arr2: " + Arrays.toString(arr2));
@@ -82,6 +92,13 @@ public class SortTest {
             }
         }
         return true;
+    }
+
+    private void testSort(){
+        sortingInterface.sort(arr1);
+        sortingInterface.sort(arr2);
+        sortingInterface.sort(arr3);
+        sortingInterface.sort(arr4);
     }
 
 }
